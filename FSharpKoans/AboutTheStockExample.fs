@@ -55,8 +55,22 @@ module ``about the stock example`` =
     // tests for yourself along the way. You can also try 
     // using the F# Interactive window to check your progress.
 
+    let greatestVariance =
+        stockData
+        |> Seq.skip 1
+        |> Seq.map (fun x -> x.Split([|','|]))
+        |> Seq.map (fun x -> x.[0], abs(System.Double.Parse(x.[1]) - System.Double.Parse(x.[4])))   
+        |> Seq.maxBy snd
+        |> fst
+
     [<Koan>]
     let YouGotTheAnswerCorrect() =
-        let result =  __
+        let result =  greatestVariance
         
         AssertEquality "2012-03-13" result
+
+    
+    
+    
+        
+   
