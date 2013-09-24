@@ -31,11 +31,11 @@ module ``about modules`` =
     [<Koan>]
     let ModulesCanContainValuesAndTypes() =
 
-        AssertEquality MushroomKingdom.Mario.Name __
-        AssertEquality MushroomKingdom.Mario.Occupation __
+        AssertEquality MushroomKingdom.Mario.Name "Mario"
+        AssertEquality MushroomKingdom.Mario.Occupation "Plumber"
         
         let moduleType = MushroomKingdom.Mario.GetType()
-        AssertEquality moduleType typeof<FILL_ME_IN>
+        AssertEquality moduleType typeof<MushroomKingdom.Character>
 
     [<Koan>]
     let ModulesCanContainFunctions() =
