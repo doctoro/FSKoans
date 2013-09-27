@@ -41,7 +41,7 @@ module ``about modules`` =
     let ModulesCanContainFunctions() =
         let superMario = MushroomKingdom.powerUp MushroomKingdom.Mario
 
-        AssertEquality superMario.Power __
+        AssertEquality superMario.Power (Some MushroomKingdom.Mushroom)
 
 (* NOTE: In previous sections, you've seen modules like List and Option that 
          contain useful functions for dealing with List types and Option types
@@ -52,6 +52,6 @@ open MushroomKingdom
 type ``about opened modules``() =
     [<Koan>]
     let OpenedModulesBringTheirContentsInScope() = 
-        AssertEquality Mario.Name __
-        AssertEquality Mario.Occupation __
-        AssertEquality Mario.Power __
+        AssertEquality Mario.Name "Mario"
+        AssertEquality Mario.Occupation "Plumber"
+        AssertEquality Mario.Power None
